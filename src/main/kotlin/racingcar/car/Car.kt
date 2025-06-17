@@ -7,4 +7,12 @@ class Car(val name: Name, private var position: Position = Position()) {
             return Car(Name(name))
         }
     }
+
+    fun forward() {
+        position = position.increase()
+    }
+
+    fun currentPosition(): Int {
+        return position.value
+    }
 }
