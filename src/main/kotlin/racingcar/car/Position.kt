@@ -1,7 +1,5 @@
 package racingcar.car
 
-private const val MIN_POSITION = 0
-private const val MAX_POSITION = 1000
 
 data class Position(val value: Int = 0) {
     init {
@@ -12,6 +10,11 @@ data class Position(val value: Int = 0) {
 
     fun increase(): Position {
         return Position(value + 1)
+    }
+
+    companion object {
+        const val MIN_POSITION = 0
+        const val MAX_POSITION = 1000
     }
 
 }
