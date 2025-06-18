@@ -7,20 +7,38 @@ import racingcar.view.Output
 class GameController(val input: Input, val output: Output) {
 
     fun run() {
-        // todo: input
-        val game = Game(listOf("pobi", "woni", "jun"))
-
-        // todo: input
-        val round = 5
+        val game = initializeGame()
+        val round = readRound()
 
         repeat(round) {
             game.playRound()
-            // todo: output
-            game.cars.forEach { car -> }
+            showRoundResult(game)
         }
 
+        showWinners(game)
+    }
+
+    private fun initializeGame(): Game {
+        output.printCarNamesInputMessage()
+        val carNames = input.readCarNames()
+        val game = Game(carNames)
+        return game
+    }
+
+    private fun readRound(): Int {
+        output.printRoundInputMessage()
+        val round = input.readRound()
+        return round
+    }
+
+    private fun showRoundResult(game: Game) {
+        output.printRoundResultTitle()
+        output.printRoundResult(game)
+    }
+
+    private fun showWinners(game: Game) {
         val winners = game.getWinners()
-        // todo: output
+        output.printWinners(winners)
     }
 
 }

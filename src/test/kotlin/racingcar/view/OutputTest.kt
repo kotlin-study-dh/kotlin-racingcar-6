@@ -15,7 +15,7 @@ class OutputTest {
         val winners = game.getWinners()
 
         // when & then
-        output.printRoundResult(winners)
+        output.printRoundResult(game)
     }
 
     @Test
