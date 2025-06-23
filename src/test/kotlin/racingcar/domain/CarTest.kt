@@ -7,6 +7,14 @@ import org.junit.jupiter.params.provider.ValueSource
 
 class CarTest {
 
+    @Test
+    fun `create Car object`() {
+        val car = Car("john")
+
+        assert(car.name == "john")
+        assert(car.position == 0)
+    }
+
     @ParameterizedTest
     @ValueSource(strings = ["", " ", "abcdef", "가나다", "ab123"])
     fun `throw exception when car name is invalid`(name: String) {
