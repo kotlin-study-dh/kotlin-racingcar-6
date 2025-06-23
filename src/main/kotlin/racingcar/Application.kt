@@ -1,5 +1,8 @@
 package racingcar
 
+import racingcar.view.InputView
+
 fun main() {
-    // TODO: 프로그램 구현
+    val carNames = InputView.readCarNames()
+    val trialCount = InputView.readTrialCount()
 }
