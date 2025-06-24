@@ -1,6 +1,12 @@
 package racingcar.domain
 
+import racingcar.common.PowerStrategy
+
 class Cars private constructor(val cars: List<Car>) {
+
+    fun move(powerStrategy: PowerStrategy) {
+        cars.forEach { it.moveForward(powerStrategy.generatePower()) }
+    }
 
     companion object {
         fun withNames(names: List<String>): Cars {
