@@ -54,4 +54,19 @@ class CarsTest {
         assertThat(cars.cars.map { it.position })
             .containsExactly(0, 0)
     }
+
+    @Test
+    fun `find winners`() {
+        // given
+        val cars = Cars.withNames(listOf("Lee", "Kim"))
+
+        // when
+        cars.move(object : PowerStrategy {
+            override fun generatePower() = 4
+        })
+
+        // then
+        assertThat(cars.winners()).extracting("name")
+            .containsExactly("Lee", "Kim")
+    }
 }

@@ -8,6 +8,12 @@ class Cars private constructor(val cars: List<Car>) {
         cars.forEach { it.moveForward(powerStrategy.generatePower()) }
     }
 
+    fun winners(): List<Car> {
+        val maxPosition = cars.maxOf { it.position }
+        return cars.filter { it.position == maxPosition }
+            .toList()
+    }
+
     companion object {
         fun withNames(names: List<String>): Cars {
             require(names.size == names.distinct().size) {
