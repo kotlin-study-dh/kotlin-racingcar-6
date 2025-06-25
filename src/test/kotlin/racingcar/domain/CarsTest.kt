@@ -21,6 +21,11 @@ class CarsTest {
     }
 
     @Test
+    fun `no duplication allowed for car names`() {
+        assertThrows<IllegalArgumentException> { Cars.withNames(listOf("a", "a")) }
+    }
+
+    @Test
     fun `all Cars move forward when power == 4`() {
         // given
         val cars = Cars.withNames(listOf("Lee", "Kim"))

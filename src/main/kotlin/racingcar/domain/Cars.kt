@@ -10,6 +10,10 @@ class Cars private constructor(val cars: List<Car>) {
 
     companion object {
         fun withNames(names: List<String>): Cars {
+            require(names.size == names.distinct().size) {
+                "No duplication allowed for car names."
+            }
+
             require(names.size >= MIN_CAR_AMOUNT) {
                 "There must be between $MIN_CAR_AMOUNT and $MAX_CAR_AMOUNT cars in the race."
             }
