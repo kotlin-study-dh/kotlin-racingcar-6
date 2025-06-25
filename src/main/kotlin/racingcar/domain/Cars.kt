@@ -10,10 +10,14 @@ class Cars private constructor(val cars: List<Car>) {
 
     companion object {
         fun withNames(names: List<String>): Cars {
-            require(names.size >= MIN_CAR_AMOUNT) { "There must be at least $MIN_CAR_AMOUNT cars in the race." }
+            require(names.size >= MIN_CAR_AMOUNT) {
+                "There must be between $MIN_CAR_AMOUNT and $MAX_CAR_AMOUNT cars in the race."
+            }
+
             return Cars(names.map { Car(it) })
         }
 
         const val MIN_CAR_AMOUNT = 2
+        const val MAX_CAR_AMOUNT = 15
     }
 }
