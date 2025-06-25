@@ -1,5 +1,6 @@
 package racingcar.view
 
+import racingcar.domain.Car
 import racingcar.domain.Cars
 
 object OutputView {
@@ -14,5 +15,10 @@ object OutputView {
         }
 
         println()
+    }
+
+    fun printWinners(winners: List<Car>) {
+        print("최종 우승자 : ")
+        println(winners.joinToString(separator = ", ") { it.name })
     }
 }

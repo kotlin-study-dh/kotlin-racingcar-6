@@ -15,4 +15,6 @@ fun main() {
         cars.move(RandomPowerStrategy)
         OutputView.printResults(cars)
     }
+
+    OutputView.printWinners(cars.winners())
 }
