@@ -5,6 +5,10 @@ import racingcar.domain.Cars
 
 object OutputView {
 
+    fun printException(e: Exception) {
+        System.err.println("[ERROR] ${e.message}")
+    }
+
     fun printResultTitle() {
         println("-- 실행 결과 --")
     }
