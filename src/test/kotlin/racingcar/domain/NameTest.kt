@@ -15,4 +15,15 @@ class NameTest {
             Name(name)
         }
     }
+
+    @Test
+    fun `throw an exception if name is blank`() {
+        // given
+        val name = " "
+
+        // when & then
+        assertThrows(IllegalArgumentException::class.java) {
+            Name(name)
+        }
+    }
 }
