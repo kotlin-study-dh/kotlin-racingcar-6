@@ -4,7 +4,11 @@ import camp.nextstep.edu.missionutils.Randoms
 import racingcar.car.Car
 
 class Game(names: List<String>) {
-    private val _cars: MutableList<Car> = names.map { Car.from(it) }.toMutableList()
+    private val _cars: List<Car> = names.map { Car.from(it) }
+
+    init {
+        require(_cars.size >= 2) { "Game must have at least two car" }
+    }
 
     val cars: List<Car>
         get() = _cars.toList()

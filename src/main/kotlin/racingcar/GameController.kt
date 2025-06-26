@@ -1,6 +1,7 @@
 package racingcar
 
 import racingcar.game.Game
+import racingcar.game.GameCount
 import racingcar.view.Input
 import racingcar.view.Output
 
@@ -10,7 +11,7 @@ class GameController(val input: Input, val output: Output) {
         val game = initializeGame()
         val round = readRound()
 
-        repeat(round) {
+        repeat(round.value) {
             game.playRound()
             showRoundResult(game)
         }
@@ -25,7 +26,7 @@ class GameController(val input: Input, val output: Output) {
         return game
     }
 
-    private fun readRound(): Int {
+    private fun readRound(): GameCount {
         output.printRoundInputMessage()
         val round = input.readRound()
         return round

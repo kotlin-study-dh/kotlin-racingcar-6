@@ -2,7 +2,12 @@ package racingcar.game
 
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.assertThrows
+import org.junit.jupiter.params.ParameterizedTest
+import org.junit.jupiter.params.provider.Arguments
+import org.junit.jupiter.params.provider.MethodSource
 import racingcar.car.Car
+import java.util.stream.Stream
 
 class GameTest {
 
@@ -30,5 +35,23 @@ class GameTest {
 
         // then
         assertThat(game.cars).hasSize(3)
+    }
+
+    @ParameterizedTest
+    @MethodSource("insufficientNames")
+    fun `should have at least two cars`() {
+        // given
+        val names = listOf("only")
+
+        // when & then
+        assertThrows<IllegalArgumentException> { Game(names) }
+    }
+
+    companion object {
+        @JvmStatic
+        private fun insufficientNames(): Stream<Arguments> = Stream.of(
+            Arguments.of(emptyList<String>()),
+            Arguments.of(listOf("only"))
+        )
     }
 }
