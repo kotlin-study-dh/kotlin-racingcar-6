@@ -1,8 +1,13 @@
 package racingcar.domain
 
-class Participant (name: String, progress: Long = 0) {
+data class Participant (val name: Name, val progress: Progress = Progress()) {
 
-    val name = Name(name)
+    companion object {
+        const val STEP_SIZE = 1L;
+    }
 
-    val progress = Progress(progress)
+    fun forward() : Participant {
+        val increasedProgress = progress.increase(STEP_SIZE)
+        return Participant(name, increasedProgress)
+    }
 }

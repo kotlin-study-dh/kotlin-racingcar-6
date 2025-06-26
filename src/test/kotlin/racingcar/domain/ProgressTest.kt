@@ -15,4 +15,16 @@ class ProgressTest {
             Progress(progress)
         }
     }
+
+    @Test
+    fun `increase progress`() {
+        // given
+        val progress = Progress(0)
+
+        // when
+        val actual = progress.increase(3)
+
+        // then
+        assertEquals(Progress(3), actual)
+    }
 }

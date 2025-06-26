@@ -1,8 +1,6 @@
 package racingcar.domain
 
-class Name(name: String) {
-
-    val name:String = name
+data class Name(val name: String) {
 
     init {
         require(name.length <= MAX_NAME_LENGTH) {
