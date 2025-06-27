@@ -4,7 +4,6 @@ import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 
 class RandomNumberGeneratorTest {
-
     @Test
     fun `generate returns a number between 0 and 9`() {
         // given
