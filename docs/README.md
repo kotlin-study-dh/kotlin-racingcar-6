@@ -1,9 +1,9 @@
 ## Console
-- [ ] input car name
-    - split with ,
-    - max length 5
-    - no duplicate
-- [ ] input count
+- [x] input car name
+    - [x] split with ,
+    - [x] max length 5
+    - [x] no duplicate
+- [x] input count
 - [ ] print result
     - [ ] name / bar by distance
     - [ ] winners
@@ -19,4 +19,4 @@
 - [x] move a car
 
 ## Refactor
-- [ ] 
+- [ ] remove duplicate of mock RuleMachine 
