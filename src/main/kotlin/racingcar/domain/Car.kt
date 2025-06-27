@@ -1,6 +1,9 @@
 package racingcar.domain
 
-class Car(
-    private val name: String,
-    private val position: Int
-)
+data class Car(
+    val name: String,
+    val position: Int = 0
+) {
+
+    fun move() = this.copy(name, this.position + 1)
+}
