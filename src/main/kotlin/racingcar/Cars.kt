@@ -4,7 +4,7 @@ class Cars(val cars: List<Car>) {
 
     companion object {
         fun of(names: List<String>): Cars {
-            return Cars(names.map { name -> Car(name, 0) }.toList())
+            return Cars(names.map { name -> Car(name) }.toList())
         }
     }
 

@@ -5,6 +5,12 @@ import org.junit.jupiter.api.Test
 
 class CarTest {
     @Test
+    fun `should init distance as 0 when only name given`() {
+        val car = Car("hyoen")
+        assertThat(car.distance).isEqualTo(0)
+    }
+
+    @Test
     fun `should increase distance when should move`() {
         val car = Car("hyoen", 0)
         car.move(true)

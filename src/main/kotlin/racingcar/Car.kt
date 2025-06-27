@@ -3,6 +3,10 @@ package racingcar
 class Car(val name: String,
           var distance: Int) {
 
+    constructor(name: String) : this(
+        name, 0
+    )
+
     fun move(shouldMove: Boolean) {
         if (shouldMove) distance++
     }
