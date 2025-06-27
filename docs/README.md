@@ -5,11 +5,11 @@
 - [ ] print result
     - [ ] name / bar by distance
     - [ ] winners
-- [ ] print exception
-    - [ ] [ERROR]
+- [x] print exception
+    - [x] [ERROR]
 
 ## Feature
-- [ ] retry for invalid input
+- [x] retry for invalid input
 - [ ] decide movement
 - [ ] move a car
 
