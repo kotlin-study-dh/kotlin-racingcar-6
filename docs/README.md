@@ -11,8 +11,8 @@
 
 ## Feature
 - [x] retry for invalid input
-- [ ] generate cars
-- [ ] generate car
+- [x] generate cars
+- [x] generate car
 - [ ] decide movement
 - [ ] move a car
 
