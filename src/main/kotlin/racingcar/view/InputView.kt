@@ -10,6 +10,6 @@ fun readCarsName(): List<String> {
 fun readTryCount(): Int {
     println("시도할 횟수는 몇 회인가요?")
     return Console.readLine().toIntOrNull()
-        ?.also { require(it > 0) {"Try count must be positive"} }
+        ?.also { require(it > 0) { "Try count must be positive" } }
         ?: throw IllegalArgumentException("Try count must be positive")
 }

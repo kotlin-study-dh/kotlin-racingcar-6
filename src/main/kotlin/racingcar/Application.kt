@@ -1,11 +1,7 @@
 package racingcar
 
 import racingcar.domain.Car
-import racingcar.view.printExecutionResult
-import racingcar.view.printExecutionResultPrompt
-import racingcar.view.printWinners
-import racingcar.view.readCarsName
-import racingcar.view.readTryCount
+import racingcar.view.*
 
 fun main() {
     val cars: List<Car> = readCarsName().map { Car(it) }

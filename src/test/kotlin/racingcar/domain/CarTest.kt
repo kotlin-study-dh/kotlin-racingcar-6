@@ -1,6 +1,6 @@
 package racingcar.domain
 
-import org.assertj.core.api.Assertions.*
+import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertThrows
 
@@ -9,7 +9,8 @@ class CarTest {
     @Test
     fun `throw exception name of car is over 5 characters`() {
         assertThat(
-        assertThrows<IllegalArgumentException> { Car("kayoung", 0) }.message)
+            assertThrows<IllegalArgumentException> { Car("kayoung", 0) }.message
+        )
             .isEqualTo("Car name must be at least 5 characters")
     }
 
