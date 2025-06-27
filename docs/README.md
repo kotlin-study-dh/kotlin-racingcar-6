@@ -15,7 +15,7 @@
 - [x] generate cars
 - [x] generate car
 - [x] generate ridingCount
-- [ ] decide go forward or stay
+- [x] decide go forward or stay
 - [ ] move a car
 
 ## Refactor
