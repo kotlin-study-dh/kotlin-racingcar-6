@@ -18,7 +18,7 @@ class RaceRuleTest {
         val raceRule = RaceRule(ForwardGambler(StubRandomNumberGenerator()))
 
         // when
-        val actual = raceRule.evaluate(racers)
+        val actual = raceRule.evaluateRound(racers)
 
         // then
         val expect = Racers(listOf(Racer(Name("A"), Progress(1L)), Racer(Name("B"), Progress(1L))))

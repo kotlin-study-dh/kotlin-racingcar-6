@@ -17,9 +17,12 @@ class RacingGame(names: List<String>) {
 
     fun play(round: Int): List<List<Pair<String, Long>>> {
         return (1..round).map {
-            val evaluate = rule.evaluate(racers)
+            val evaluate = rule.evaluateRound(racers)
             racers = evaluate
             racers.status
         }
     }
+
+    val winners
+        get() = racers.findFrontRunners().names
 }

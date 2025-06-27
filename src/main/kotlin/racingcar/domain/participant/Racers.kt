@@ -14,4 +14,12 @@ data class Racers(val racers: List<Racer>) {
 
     val status
         get() = racers.map { it.status }
+
+    val names
+        get() = racers.map { it.name.name }
+
+    fun findFrontRunners(): Racers {
+        val front = racers.maxOfOrNull { it.progress.progress }
+        return Racers(racers.filter { it.progress.progress == front })
+    }
 }

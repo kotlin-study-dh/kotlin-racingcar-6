@@ -17,7 +17,7 @@ data class RaceRule(
         }
     }
 
-    fun evaluate(racers: Racers): Racers {
+    fun evaluateRound(racers: Racers): Racers {
         return 0.until(racers.size)
             .map { it to strategy() }
             .filter { it.second }
