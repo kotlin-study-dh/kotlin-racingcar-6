@@ -1,7 +1,7 @@
 package racingcar
 
-class Car(private val name: String,
-          private var distance: Int) {
+class Car(val name: String,
+          var distance: Int) {
 
     fun move(shouldMove: Boolean) {
         if (shouldMove) distance++

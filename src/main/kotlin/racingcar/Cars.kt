@@ -1,11 +1,23 @@
 package racingcar
 
-class Cars(private val cars: List<Car>) {
+class Cars(val cars: List<Car>) {
 
     companion object {
         fun of(names: List<String>): Cars {
             return Cars(names.map { name -> Car(name, 0) }.toList())
         }
+    }
+
+    fun move(movementRule: MovementRule) {
+        cars.forEach { car -> car.move(movementRule.shouldMove()) }
+    }
+
+    fun findFarestCars(): List<Car> {
+        var maxDistance = 0
+        cars.forEach { car ->
+            if (car.distance > maxDistance) maxDistance = car.distance
+        }
+       return cars.filter { car -> car.distance == maxDistance }
     }
 
     override fun equals(other: Any?): Boolean {
@@ -19,9 +31,5 @@ class Cars(private val cars: List<Car>) {
 
     override fun hashCode(): Int {
         return cars.hashCode()
-    }
-
-    fun move(movementRule: MovementRule) {
-        cars.forEach { car -> car.move(movementRule.isSatisfied()) }
     }
 }
