@@ -4,9 +4,9 @@
     - [x] max length 5
     - [x] no duplicate
 - [x] input count
-- [ ] print result
-    - [ ] name / bar by distance
-    - [ ] winners
+- [x] print result
+    - [x] name / bar by distance
+    - [x] winners
 - [x] print exception
     - [x] [ERROR]
 
@@ -19,4 +19,5 @@
 - [x] move a car
 
 ## Refactor
-- [ ] remove duplicate of mock RuleMachine 
+- [ ] remove duplicate of mock RuleMachine in test 
+- [ ] hiding car field in output logic 
