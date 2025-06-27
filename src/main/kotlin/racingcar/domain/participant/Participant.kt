@@ -1,4 +1,4 @@
-package racingcar.domain
+package racingcar.domain.participant
 
 data class Participant (val name: Name, val progress: Progress = Progress()) {
 

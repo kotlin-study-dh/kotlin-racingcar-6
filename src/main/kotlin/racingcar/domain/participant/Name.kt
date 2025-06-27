@@ -1,4 +1,4 @@
-package racingcar.domain
+package racingcar.domain.participant
 
 data class Name(val name: String) {
 

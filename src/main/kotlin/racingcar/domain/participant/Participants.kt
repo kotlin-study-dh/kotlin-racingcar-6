@@ -1,4 +1,4 @@
-package racingcar.domain
+package racingcar.domain.participant
 
 class Participants(names :List<String>) {
 
