@@ -1,10 +1,6 @@
 package racingcar.domain.rule
 
-class ForwardGambler {
+data class ForwardGambler(val randomNumberGenerator: RandomNumberGenerator = RandomNumberGenerator()) {
 
-    companion object {
-        const val FORWARD_THRESHOLD = 4
-    }
-
-    fun gamble(strategy: () -> Int) = strategy() >= FORWARD_THRESHOLD
+    fun gamble(threshold: Int, strategy: (RandomNumberGenerator) -> Int) = strategy(randomNumberGenerator) >= threshold
 }

@@ -11,7 +11,7 @@ class ForwardGamblerTest {
         val randomNumberGenerator = RandomNumberGenerator()
 
         // when
-        val gamble = gambler.gamble {
+        val gamble = gambler.gamble(4) {
             randomNumberGenerator.generateInRange(4, 9)
         }
 
@@ -26,7 +26,7 @@ class ForwardGamblerTest {
         val randomNumberGenerator = RandomNumberGenerator()
 
         // when
-        val gamble = gambler.gamble {
+        val gamble = gambler.gamble(3) {
             randomNumberGenerator.generateInRange(1, 3)
         }
 
