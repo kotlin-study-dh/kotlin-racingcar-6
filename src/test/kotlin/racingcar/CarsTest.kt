@@ -7,7 +7,7 @@ class CarsTest {
     @Test
     fun `should return Cars when names given`() {
         assertEquals(
-            Cars(listOf(Car(HJ), Car(CR), Car(GB))),
+            Cars(listOf(Car(HJ, 0), Car(CR, 0), Car(GB, 0))),
             Cars.of(listOf(HJ, CR, GB))
         )
     }
