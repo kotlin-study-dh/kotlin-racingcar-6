@@ -15,4 +15,8 @@ class GameManager(
         }
         return GameManager(movedCars)
     }
+
+    fun decideWinners() = cars.maxByOrNull { it.position }
+        ?.let { maxCar -> cars.filter { it.position == maxCar.position } }
+        ?: emptyList()
 }
