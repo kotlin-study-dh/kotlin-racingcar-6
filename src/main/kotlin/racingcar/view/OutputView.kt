@@ -13,6 +13,6 @@ class OutputView {
     }
 
     fun printWinners(winners: List<Car>) {
-        println("${winners.joinToString(", ") { it.name }}가 최종 우승했습니다.")
+        println("최종 우승자 : ${winners.joinToString(", ") { it.name }}")
     }
 }
