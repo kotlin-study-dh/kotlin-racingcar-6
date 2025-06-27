@@ -54,7 +54,7 @@ class CarsTest {
         cars.moveAll(numberGenerator)
 
         // then
-        assertThat(cars.cars.all { it.position > 0 }).isTrue
+        assertThat(cars.cars).allMatch { it.position == 1 }
     }
 
     @Test
