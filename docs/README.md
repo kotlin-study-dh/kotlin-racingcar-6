@@ -2,6 +2,7 @@
 - [ ] input car name
     - split with ,
     - max length 5
+    - no duplicate
 - [ ] input count
 - [ ] print result
     - [ ] name / bar by distance
@@ -13,7 +14,8 @@
 - [x] retry for invalid input
 - [x] generate cars
 - [x] generate car
-- [ ] decide movement
+- [x] generate ridingCount
+- [ ] decide go forward or stay
 - [ ] move a car
 
 ## Refactor
