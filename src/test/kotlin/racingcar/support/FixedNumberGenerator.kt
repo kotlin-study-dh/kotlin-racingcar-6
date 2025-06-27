@@ -3,9 +3,12 @@ package racingcar.support
 import racingcar.generator.NumberGenerator
 
 class FixedNumberGenerator(
-    private val fixedNumber: Int,
+    private vararg val fixedNumber: Int,
 ) : NumberGenerator {
+    private var index = 0
+
     override fun generate(): Int {
-        return fixedNumber
+        check(index < fixedNumber.size) { "No more fixed numbers available" }
+        return fixedNumber[index++]
     }
 }
