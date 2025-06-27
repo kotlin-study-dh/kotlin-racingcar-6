@@ -1,10 +1,9 @@
 package racingcar
 
-import camp.nextstep.edu.missionutils.Randoms
+class MovementRule(private val numberGenerator: NumberGenerator) {
 
-class MovementRule {
-    fun isSatisfied(): Boolean {
-        return Randoms.pickNumberInRange(NUMBER_MIN, NUMBER_MAX) >= THRESHOLD
+    fun shouldMove(): Boolean {
+        return numberGenerator.generate(NUMBER_MIN, NUMBER_MAX) >= THRESHOLD
     }
 
     companion object {
