@@ -15,12 +15,7 @@ class Cars(val cars: List<Car>) {
     }
 
     fun findFarthestCars(): Set<Car> {
-        var maxDistance = Distance(0)
-        for (car in cars) {
-            if (car.distance.isBiggerThan(maxDistance)) {
-                maxDistance = car.distance
-            }
-        }
+        val maxDistance = cars.maxOf { it.distance }
         return cars.filter { it.distance == maxDistance }.toSet()
     }
 
