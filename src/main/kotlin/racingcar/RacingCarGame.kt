@@ -16,7 +16,7 @@ class RacingCarGame {
         val movementRule = MovementRule(RandomNumberGenerator())
 
         outputView.printResultTitle()
-        repeat(ridingCount.count) {
+        repeat(ridingCount.value) {
             cars.move(movementRule)
             outputView.printRacing(cars)
         }
