@@ -1,11 +1,8 @@
-package racingcar
+package racingcar.domain
 
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
-import racingcar.domain.Car
-import racingcar.domain.Cars
-import racingcar.domain.Distance
 
 class CarsTest {
     @Test
