@@ -11,7 +11,7 @@ class OutputView {
 
     fun printRacing(cars: Cars) {
         cars.cars.forEach { car ->
-            val rail = "-".repeat(car.distance)
+            val rail = "-".repeat(car.distance.distance)
             println("${car.name} : $rail")
         }
         println()
