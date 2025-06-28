@@ -1,3 +1,3 @@
-package racingcar
+package racingcar.domain
 
 class RidingCount(val count: Int)

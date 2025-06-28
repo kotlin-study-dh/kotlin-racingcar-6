@@ -1,4 +1,6 @@
-package racingcar
+package racingcar.domain
+
+import racingcar.MovementRule
 
 class Cars(val cars: List<Car>) {
 
