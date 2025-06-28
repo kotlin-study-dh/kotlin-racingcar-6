@@ -5,12 +5,12 @@ class Car(
     private val _distance: Distance
 ) {
 
+    val distance: Distance
+        get() = _distance
+
     constructor(name: String) : this(
         name, Distance(0)
     )
-
-    val distance: Distance
-        get() = _distance
 
     fun move(shouldMove: Boolean) {
         if (shouldMove) _distance.increase()

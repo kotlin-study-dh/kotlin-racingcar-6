@@ -2,13 +2,10 @@ package racingcar.domain
 
 import racingcar.MovementRule
 
-class Cars(val cars: List<Car>) {
+class Cars(private val _cars: List<Car>) {
 
-    companion object {
-        fun of(names: List<String>): Cars {
-            return Cars(names.map { name -> Car(name) }.toList())
-        }
-    }
+    val cars: List<Car>
+        get() = _cars.toList()
 
     fun move(movementRule: MovementRule) {
         cars.forEach { car -> car.move(movementRule.shouldMove()) }
@@ -25,10 +22,16 @@ class Cars(val cars: List<Car>) {
 
         other as Cars
 
-        return cars == other.cars
+        return _cars == other._cars
     }
 
     override fun hashCode(): Int {
-        return cars.hashCode()
+        return _cars.hashCode()
+    }
+
+    companion object {
+        fun of(names: List<String>): Cars {
+            return Cars(names.map { name -> Car(name) }.toList())
+        }
     }
 }

@@ -1,3 +1,7 @@
 package racingcar.domain
 
-class RidingCount(val count: Int)
+class RidingCount(private val _value: Int){
+
+    val value
+    get() = _value
+}

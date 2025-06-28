@@ -1,13 +1,16 @@
 package racingcar.domain
 
-class Distance(var distance: Int): Comparable<Distance> {
+class Distance(private var _value: Int) : Comparable<Distance> {
+
+    val value: Int
+        get() = _value
 
     fun increase() {
-        distance++
+        _value++
     }
 
     override fun compareTo(other: Distance): Int {
-        return this.distance.compareTo(other.distance)
+        return this.value.compareTo(other.value)
     }
 
     override fun equals(other: Any?): Boolean {
@@ -16,10 +19,10 @@ class Distance(var distance: Int): Comparable<Distance> {
 
         other as Distance
 
-        return distance == other.distance
+        return _value == other._value
     }
 
     override fun hashCode(): Int {
-        return distance
+        return _value
     }
 }
