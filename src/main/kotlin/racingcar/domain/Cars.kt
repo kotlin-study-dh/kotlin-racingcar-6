@@ -14,12 +14,23 @@ class Cars(val cars: List<Car>) {
         cars.forEach { car -> car.move(movementRule.shouldMove()) }
     }
 
-    fun findFarestCars(): List<Car> {
-        var maxDistance = 0
+    fun findFarthestCars(): MutableSet<Car> {
+        val farthestCars: MutableSet<Car> = mutableSetOf()
         cars.forEach { car ->
-            if (car.distance > maxDistance) maxDistance = car.distance
+            car.addFartherCar(farthestCars)
         }
-       return cars.filter { car -> car.distance == maxDistance }
+        return farthestCars
+    }
+
+    private fun Car.addFartherCar(farthestCars: MutableSet<Car>) {
+        farthestCars.forEach { car ->
+            if (car.isFartherThan(this)) {
+                farthestCars.remove(car)
+                farthestCars.add(this)
+            } else if (car.isSameDistance(this)) {
+                farthestCars.add(this)
+            }
+        }
     }
 
     override fun equals(other: Any?): Boolean {
@@ -30,7 +41,6 @@ class Cars(val cars: List<Car>) {
 
         return cars==other.cars
     }
-
     override fun hashCode(): Int {
         return cars.hashCode()
     }

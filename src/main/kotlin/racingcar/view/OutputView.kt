@@ -17,7 +17,7 @@ class OutputView {
         println()
     }
 
-    fun printWinners(cars: List<Car>) {
+    fun printWinners(cars: Set<Car>) {
         print("최종 우승자 : ")
         println(cars.joinToString(", ") { car -> car.name })
     }
