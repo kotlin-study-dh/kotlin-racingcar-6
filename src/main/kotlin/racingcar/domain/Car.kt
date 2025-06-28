@@ -11,6 +11,10 @@ class Car(
     val distanceAmount: Int
         get() = _distance.value
 
+    init {
+        require(name.length <= 5) { "Name should be same or under 5 characters" }
+    }
+
     constructor(name: String) : this(
         name, Distance(0)
     )

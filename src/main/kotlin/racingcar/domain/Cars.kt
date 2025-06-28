@@ -31,6 +31,7 @@ class Cars(private val _cars: List<Car>) {
 
     companion object {
         fun of(names: List<String>): Cars {
+            require(names.distinct().size == names.size) { "Name shouldn't be duplicated" }
             return Cars(names.map { name -> Car(name) }.toList())
         }
     }

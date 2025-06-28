@@ -3,6 +3,7 @@ package racingcar.domain
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.assertThrows
 
 class CarsTest {
     @Test
@@ -11,6 +12,11 @@ class CarsTest {
             Cars(listOf(Car("hyeon", Distance(0)), Car("chung", Distance(0)), Car("gibeo", Distance(0)))),
             Cars.of(listOf("hyeon", "chung", "gibeo"))
         )
+    }
+
+    @Test
+    fun `should throw exception when duplicated names given`() {
+        assertThrows<IllegalArgumentException> { Cars.of(listOf("hyeon", "hyeon")) }
     }
 
     @Test

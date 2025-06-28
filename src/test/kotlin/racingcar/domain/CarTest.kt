@@ -2,8 +2,15 @@ package racingcar.domain
 
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.assertThrows
 
 class CarTest {
+
+    @Test
+    fun `should throw exception if the name is over 5 characters`() {
+        assertThrows<IllegalArgumentException> { Car("hyeonj") }
+    }
+
     @Test
     fun `should init distance as 0 when only name given`() {
         val car = Car("hyoen")
