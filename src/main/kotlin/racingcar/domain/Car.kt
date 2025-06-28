@@ -1,31 +1,28 @@
 package racingcar.domain
 
-class Car(val name: String,
-          var distance: Int) {
+class Car(
+    val name: String,
+    private val _distance: Distance
+) {
 
     constructor(name: String) : this(
-        name, 0
+        name, Distance(0)
     )
 
+    val distance: Distance
+        get() = _distance
+
     fun move(shouldMove: Boolean) {
-        if (shouldMove) distance++
-    }
-
-    fun isFartherThan(car: Car): Boolean {
-        return this.distance.isBiggerThan(car.distance)
-    }
-
-    fun isSameDistance(car: Car): Boolean {
-        return this.distance.isSameWith(car.distance)
+        if (shouldMove) _distance.increase()
     }
 
     override fun equals(other: Any?): Boolean {
-        if (this===other) return true
-        if (javaClass!=other?.javaClass) return false
+        if (this === other) return true
+        if (javaClass != other?.javaClass) return false
 
         other as Car
 
-        return name==other.name
+        return name == other.name
     }
 
     override fun hashCode(): Int {
