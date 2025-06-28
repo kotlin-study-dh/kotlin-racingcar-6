@@ -6,6 +6,7 @@ import racingcar.view.InputView
 import racingcar.view.OutputView
 
 class RacingCarGame {
+
     val inputView = InputView()
     val outputView = OutputView()
 
@@ -15,10 +16,10 @@ class RacingCarGame {
         val movementRule = MovementRule(RandomNumberGenerator())
 
         outputView.printResultTitle()
-        for (i in 1..ridingCount.count) {
+        repeat(ridingCount.count) {
             cars.move(movementRule)
             outputView.printRacing(cars)
         }
-        outputView.printWinners(cars.findFarestCars())
+        outputView.printWinners(cars.findFarthestCars())
     }
 }

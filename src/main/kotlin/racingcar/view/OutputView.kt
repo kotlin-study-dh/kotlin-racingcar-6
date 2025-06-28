@@ -11,14 +11,14 @@ class OutputView {
 
     fun printRacing(cars: Cars) {
         cars.cars.forEach { car ->
-            val rail = "-".repeat(car.distance.value)
+            val rail = "-".repeat(car.distanceAmount)
             println("${car.name} : $rail")
         }
         println()
     }
 
-    fun printWinners(cars: Set<Car>) {
+    fun printWinners(winners: Set<Car>) {
         print("최종 우승자 : ")
-        println(cars.joinToString(", ") { car -> car.name })
+        println(winners.joinToString(", ") { car -> car.name })
     }
 }

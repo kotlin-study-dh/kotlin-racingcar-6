@@ -8,6 +8,9 @@ class Car(
     val distance: Distance
         get() = _distance
 
+    val distanceAmount: Int
+        get() = _distance.value
+
     constructor(name: String) : this(
         name, Distance(0)
     )
