@@ -1,7 +1,7 @@
 package racingcar.car
 
 
-data class Position(val value: Int = 0) {
+data class Position(val value: Int = 0): Comparable<Position> {
     init {
         require(value in MIN_POSITION..MAX_POSITION) {
             "Position must be between $MIN_POSITION and $MAX_POSITION"
@@ -10,6 +10,10 @@ data class Position(val value: Int = 0) {
 
     fun increase(): Position {
         return Position(value + 1)
+    }
+
+    override fun compareTo(other: Position): Int {
+        return value.compareTo(other.value)
     }
 
     companion object {

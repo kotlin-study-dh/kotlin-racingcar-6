@@ -7,6 +7,7 @@ import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.Arguments
 import org.junit.jupiter.params.provider.MethodSource
 import racingcar.car.Car
+import racingcar.car.Position
 import java.util.stream.Stream
 
 class GameTest {
@@ -65,6 +66,6 @@ class GameTest {
         copy.forEach { it.forward() }
 
         // Then
-        assert(game.cars[0].currentPosition() == 0)
+        assert(game.cars[0].position == Position(0))
     }
 }

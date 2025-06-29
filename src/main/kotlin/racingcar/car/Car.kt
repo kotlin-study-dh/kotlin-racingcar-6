@@ -12,8 +12,4 @@ class Car(val name: Name, val position: Position = Position()) {
         val nextPosition = position.increase()
         return Car(name, nextPosition)
     }
-
-    fun currentPosition(): Int {
-        return position.value
-    }
 }

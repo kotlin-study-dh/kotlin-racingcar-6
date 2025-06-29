@@ -23,10 +23,10 @@ class CarTest {
         val car = Car.from("Mycar")
 
         // when
-        val position = car.currentPosition()
+        val position = car.position
 
         // then
-        assertThat(position).isEqualTo(0)
+        assertThat(position).isEqualTo(Position(0))
     }
 
     @Test
@@ -38,7 +38,7 @@ class CarTest {
         val movedCar = car.forward()
 
         // then
-        assertThat(movedCar.currentPosition()).isEqualTo(1)
+        assertThat(movedCar.position).isEqualTo(Position(1))
     }
 
 }

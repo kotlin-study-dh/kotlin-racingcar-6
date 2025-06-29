@@ -18,7 +18,7 @@ class Output {
 
     fun printRoundResult(game: Game) {
         game.cars.forEach { car ->
-            println("${car.name.value} : ${"-".repeat(car.currentPosition())}")
+            println("${car.name.value} : ${"-".repeat(car.position.value)}")
         }
         println()
     }

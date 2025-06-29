@@ -21,8 +21,8 @@ class Game(names: List<String>) {
     }
 
     fun getWinners(): List<Car> {
-        val maxPosition = _cars.maxOf { it.currentPosition() }
-        return _cars.filter { it.currentPosition() == maxPosition }
+        val maxPosition = _cars.maxOf { it.position }
+        return _cars.filter { it.position == maxPosition }
     }
 
     companion object {
