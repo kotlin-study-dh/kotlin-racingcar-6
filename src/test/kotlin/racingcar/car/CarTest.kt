@@ -14,7 +14,7 @@ class CarTest {
         val car = Car.from(name)
 
         // then
-        assertThat(car).isInstanceOf(Car::class.java)
+        assertThat(car.name.value).isEqualTo(name)
     }
 
     @Test
