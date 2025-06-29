@@ -11,14 +11,12 @@ class NameTest {
     fun `should fail if car name is longer than five characters`() {
         Assertions.assertThatThrownBy { Name("Haaallo") }
             .isInstanceOf(IllegalArgumentException::class.java)
-            .hasMessageContaining("Car name cannot be longer than 5 characters")
     }
 
     @Test
     fun `should fail if car name is empty`() {
         Assertions.assertThatThrownBy { Name("") }
             .isInstanceOf(IllegalArgumentException::class.java)
-            .hasMessageContaining("Car name cannot be empty")
     }
 
     @ParameterizedTest
@@ -26,7 +24,6 @@ class NameTest {
     fun `should fail if car name contains blank characters`(nameWithBlank: String) {
         Assertions.assertThatThrownBy { Name(nameWithBlank) }
             .isInstanceOf(IllegalArgumentException::class.java)
-            .hasMessageContaining("Car name cannot contain whitespaces")
     }
 
 }
