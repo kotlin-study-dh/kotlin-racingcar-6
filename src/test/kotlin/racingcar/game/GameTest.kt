@@ -54,4 +54,17 @@ class GameTest {
             Arguments.of(listOf("only"))
         )
     }
+
+    @Test
+    fun defensive_copy() {
+        // Given
+        val game = Game(listOf("hi", "bye", "hey"))
+        val copy = game.cars
+
+        // When
+        copy.forEach { it.forward() }
+
+        // Then
+        assert(game.cars[0].currentPosition() == 0)
+    }
 }

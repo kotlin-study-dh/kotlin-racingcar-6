@@ -1,6 +1,6 @@
 package racingcar.car
 
-class Car(val name: Name, private var position: Position = Position()) {
+class Car(val name: Name, val position: Position = Position()) {
 
     companion object {
         fun from(name: String): Car {
@@ -8,8 +8,9 @@ class Car(val name: Name, private var position: Position = Position()) {
         }
     }
 
-    fun forward() {
-        position = position.increase()
+    fun forward(): Car {
+        val nextPosition = position.increase()
+        return Car(name, nextPosition)
     }
 
     fun currentPosition(): Int {
