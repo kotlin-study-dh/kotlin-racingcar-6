@@ -13,7 +13,7 @@ class Output {
     }
 
     fun printRoundResultTitle() {
-        println("\n실행 결과")
+        println(System.lineSeparator() + "실행 결과")
     }
 
     fun printRoundResult(game: Game) {
