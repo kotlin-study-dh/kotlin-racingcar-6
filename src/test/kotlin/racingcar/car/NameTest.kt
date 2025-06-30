@@ -20,7 +20,7 @@ class NameTest {
     }
 
     @ParameterizedTest
-    @ValueSource(strings = [" ", " hi", "W I N", "Kot ", "  "])
+    @ValueSource(strings = [" ", " hi", "W I N", "Kot ", "  ", "\t"])
     fun `should fail if car name contains blank characters`(nameWithBlank: String) {
         Assertions.assertThatThrownBy { Name(nameWithBlank) }
             .isInstanceOf(IllegalArgumentException::class.java)
