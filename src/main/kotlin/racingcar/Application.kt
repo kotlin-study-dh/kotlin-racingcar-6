@@ -1,8 +1,8 @@
 package racingcar
 
-import racingcar.common.RandomPowerStrategy
 import racingcar.domain.Cars
 import racingcar.domain.TrialCount
+import racingcar.domain.powerstrategy.RandomPowerStrategy
 import racingcar.view.InputView
 import racingcar.view.OutputView
 

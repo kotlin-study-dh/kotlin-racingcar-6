@@ -1,6 +1,6 @@
 package racingcar.domain
 
-import racingcar.common.PowerStrategy
+import racingcar.domain.powerstrategy.PowerStrategy
 
 class Cars private constructor(val cars: List<Car>) {
 

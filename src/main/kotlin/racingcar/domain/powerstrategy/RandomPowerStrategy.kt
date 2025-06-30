@@ -1,4 +1,4 @@
-package racingcar.common
+package racingcar.domain.powerstrategy
 
 import camp.nextstep.edu.missionutils.Randoms.pickNumberInRange
 
