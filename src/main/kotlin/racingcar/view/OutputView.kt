@@ -22,7 +22,6 @@ object OutputView {
     }
 
     fun printWinners(winners: List<Car>) {
-        print("최종 우승자 : ")
-        println(winners.joinToString(separator = ", ") { it.name })
+        println("최종 우승자 : ${winners.joinToString(", ") { it.name }}")
     }
 }
