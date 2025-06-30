@@ -36,8 +36,7 @@ class CarsTest {
         })
 
         // then
-        assertThat(cars.cars.map { it.position })
-            .containsExactly(1, 1)
+        assertThat(cars.cars).allMatch { it.position == 1 }
     }
 
     @Test
