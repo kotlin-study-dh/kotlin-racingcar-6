@@ -1,0 +1,27 @@
+package racingcar.view
+
+import racingcar.domain.Car
+import racingcar.domain.Cars
+
+object OutputView {
+
+    fun printException(e: Exception) {
+        System.err.println("[ERROR] ${e.message}")
+    }
+
+    fun printResultTitle() {
+        println("-- 실행 결과 --")
+    }
+
+    fun printResults(cars: Cars) {
+        cars.cars.forEach { car ->
+            println("${car.name} : " + "-".repeat(car.position))
+        }
+
+        println()
+    }
+
+    fun printWinners(winners: List<Car>) {
+        println("최종 우승자 : ${winners.joinToString(", ") { it.name }}")
+    }
+}
