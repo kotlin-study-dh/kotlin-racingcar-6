@@ -21,6 +21,18 @@ class CarsTest {
     }
 
     @Test
+    fun `maximum 15 cars`() {
+        val names = listOf(
+            "a", "b", "c", "d", "e",
+            "f", "g", "h", "i", "j",
+            "k", "l", "m", "n", "o",
+            "p"
+        )
+
+        assertThrows<IllegalArgumentException> { Cars.withNames(names) }
+    }
+
+    @Test
     fun `no duplication allowed for car names`() {
         assertThrows<IllegalArgumentException> { Cars.withNames(listOf("a", "a")) }
     }

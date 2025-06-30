@@ -19,7 +19,7 @@ class Cars private constructor(val cars: List<Car>) {
                 "No duplication allowed for car names."
             }
 
-            require(names.size >= MIN_CAR_AMOUNT) {
+            require(names.size in MIN_CAR_AMOUNT..MAX_CAR_AMOUNT) {
                 "There must be between $MIN_CAR_AMOUNT and $MAX_CAR_AMOUNT cars in the race."
             }
 
