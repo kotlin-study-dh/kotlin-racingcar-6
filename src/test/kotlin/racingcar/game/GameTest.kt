@@ -40,10 +40,7 @@ class GameTest {
 
     @ParameterizedTest
     @MethodSource("insufficientNames")
-    fun `should have at least two cars`() {
-        // given
-        val names = listOf("only")
-
+    fun `should have at least two cars`(names: List<String>) {
         // when & then
         assertThrows<IllegalArgumentException> { Game(names) }
     }
@@ -57,7 +54,7 @@ class GameTest {
     }
 
     @Test
-    fun defensive_copy() {
+    fun `some description`() {
         // Given
         val game = Game(listOf("hi", "bye", "hey"))
         val copy = game.cars
@@ -66,6 +63,6 @@ class GameTest {
         copy.forEach { it.forward() }
 
         // Then
-        assert(game.cars[0].position == Position(0))
+        assertThat(game.cars).allMatch { it.position == Position(0) }
     }
 }
