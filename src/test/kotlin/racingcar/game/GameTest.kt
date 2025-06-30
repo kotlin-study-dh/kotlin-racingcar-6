@@ -54,7 +54,7 @@ class GameTest {
     }
 
     @Test
-    fun `some description`() {
+    fun `cannot change cars outside the game`() {
         // Given
         val game = Game(listOf("hi", "bye", "hey"))
         val copy = game.cars
