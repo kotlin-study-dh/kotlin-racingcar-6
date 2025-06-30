@@ -3,8 +3,10 @@ package racingcar
 import racingcar.domain.Car
 
 class GameManager(
-    val cars: List<Car>,
+    private val initialCars: List<Car>
 ) {
+
+    val cars : List<Car> = initialCars.toList()
 
     fun randomMoveCars(numberGenerator: NumberGenerator): GameManager {
         val movedCars = cars.map { car ->
