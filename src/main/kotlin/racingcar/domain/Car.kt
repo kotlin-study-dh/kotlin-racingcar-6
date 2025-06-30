@@ -2,8 +2,11 @@ package racingcar.domain
 
 class Car(
     val name: String,
-    var position: Int = INITIAL_CAR_POSITION,
 ) {
+    private var _position: Int = INITIAL_CAR_POSITION
+    val position: Int
+        get() = _position
+
     init {
         require(name.length in MIN_NAME_LENGTH..MAX_NAME_LENGTH) {
             "Car names must be between $MIN_NAME_LENGTH and $MAX_NAME_LENGTH characters long."
@@ -17,7 +20,7 @@ class Car(
         require(power >= MIN_POWER) { "Power has to be at least $MIN_POWER." }
 
         if (power >= MIN_MOVABLE_POWER) {
-            position++
+            _position++
         }
     }
 
