@@ -66,7 +66,7 @@ class CarsTest {
         })
 
         // then
-        assertThat(cars.winners()).extracting("name")
+        assertThat(cars.winners().map { it.name })
             .containsExactly("Lee", "Kim")
     }
 }
