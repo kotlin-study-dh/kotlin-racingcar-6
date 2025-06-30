@@ -10,11 +10,7 @@ object InputView {
 
     fun readTrialCount(): Int {
         println("시도할 횟수는 몇 회인가요?")
-
-        try {
-            return readln().toInt()
-        } catch (_: NumberFormatException) {
-            throw IllegalArgumentException("Trial count must be an integer value.")
-        }
+        return readln().toIntOrNull()
+            ?: throw IllegalArgumentException("Trial count must be an integer value.")
     }
 }
