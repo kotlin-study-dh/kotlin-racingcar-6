@@ -69,15 +69,15 @@ class CarsTest {
     @Test
     fun `find winners`() {
         // given
-        val cars = Cars.withNames(listOf("Lee", "Kim"))
+        val cars = Cars.withNames(listOf("Lee", "Kim", "Park"))
 
         // when
-        cars.move(object : PowerStrategy {
-            override fun generatePower() = 4
-        })
+        cars.cars[1].moveForward(4)
+        cars.cars[2].moveForward(4)
 
         // then
         assertThat(cars.winners().map { it.name })
-            .containsExactly("Lee", "Kim")
+            .containsExactly("Kim", "Park")
+            .doesNotContain("Lee")
     }
 }
