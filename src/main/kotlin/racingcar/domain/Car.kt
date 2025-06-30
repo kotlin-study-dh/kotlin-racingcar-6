@@ -8,7 +8,7 @@ class Car(
         require(name.length in MIN_NAME_LENGTH..MAX_NAME_LENGTH) {
             "Car names must be between $MIN_NAME_LENGTH and $MAX_NAME_LENGTH characters long."
         }
-        require(name.matches(ALPHABETIC_PATTERN.toRegex())) {
+        require(name.matches(ALPHABETIC_PATTERN)) {
             "Car name must only contain alphabetic letters."
         }
     }
@@ -22,7 +22,8 @@ class Car(
     }
 
     companion object {
-        const val ALPHABETIC_PATTERN = "^[a-zA-Z]*$"
+        val ALPHABETIC_PATTERN = "^[a-zA-Z]*$".toRegex()
+
         const val MIN_NAME_LENGTH = 1
         const val MAX_NAME_LENGTH = 5
 
