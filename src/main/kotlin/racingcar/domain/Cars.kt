@@ -11,7 +11,6 @@ class Cars private constructor(val cars: List<Car>) {
     fun winners(): List<Car> {
         val maxPosition = cars.maxOf { it.position }
         return cars.filter { it.position == maxPosition }
-            .toList()
     }
 
     companion object {
