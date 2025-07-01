@@ -1,0 +1,44 @@
+package racingcar.car
+
+import org.assertj.core.api.Assertions.assertThat
+import org.junit.jupiter.api.Test
+
+class CarTest {
+
+    @Test
+    fun `creates a car when a name is given`() {
+        // given
+        val name = "Rosie"
+
+        // when
+        val car = Car.from(name)
+
+        // then
+        assertThat(car.name.value).isEqualTo(name)
+    }
+
+    @Test
+    fun `returns initial position as 0`() {
+        // given
+        val car = Car.from("Mycar")
+
+        // when
+        val position = car.position
+
+        // then
+        assertThat(position).isEqualTo(Position(0))
+    }
+
+    @Test
+    fun `increases position when moved forward`() {
+        // given
+        val car = Car.from("Rosie")
+
+        // when
+        val movedCar = car.forward()
+
+        // then
+        assertThat(movedCar.position).isEqualTo(Position(1))
+    }
+
+}
