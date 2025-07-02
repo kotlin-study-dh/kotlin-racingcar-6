@@ -1,5 +1,14 @@
 package racingcar
 
+import racingcar.domain.RacingGame
+import racingcar.view.Input
+import racingcar.view.Output
+
 fun main() {
-    // TODO: 프로그램 구현
+    val participants = Input.enterParticipants()
+    val round = Input.enterRound()
+    val game = RacingGame(participants)
+    val playLogs = game.play(round)
+    Output.printRaceLog(playLogs)
+    Output.printWinner(game.winners)
 }
